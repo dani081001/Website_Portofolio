@@ -67,7 +67,7 @@ nav {
   background: rgba(24, 24, 27, 0.6) !important; /* Zinc 900 */
   backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 100px;
-  padding: 10px 24px !important; z-index: 50;
+  padding: 10px 24px !important; z-index: 90; /* 👈 UPDATE: z-index diubah jadi 90 */
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
   display: flex !important; justify-content: space-between !important; align-items: center !important;
 }
@@ -810,10 +810,10 @@ nav {
           </div>
         </div>
 
-      </div>
-    </div>
-  </div>
-</div>
+              </div>
+            </div>
+          </div>
+        </div>
 
 <div id="pkmModalContainer" class="hidden fixed inset-0 bg-[#09090b]/95 backdrop-blur-md flex items-center justify-center z-[110] p-4 md:p-8 opacity-0 transition-opacity duration-300">
   <div class="bg-[#18181b] w-full max-w-4xl h-full md:h-[90vh] rounded-3xl overflow-hidden relative flex flex-col border border-white/10 shadow-[0_0_50px_rgba(168,85,247,0.15)] transform scale-95 transition-transform duration-300" id="pkmModalBox">
