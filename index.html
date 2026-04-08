@@ -27,6 +27,12 @@ body {
 
 ::selection { background: #3b82f6; color: #fff; }
 
+/* Custom Scrollbar for Modal */
+.custom-scrollbar::-webkit-scrollbar { width: 6px; }
+.custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+.custom-scrollbar::-webkit-scrollbar-thumb { background: #3f3f46; border-radius: 10px; }
+.custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #52525b; }
+
 /* Background Glowing Blobs Animation */
 @keyframes pulse-bg {
   0% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
@@ -280,6 +286,7 @@ nav {
   <div class="desktop-menu">
     <a href="#about" class="nav-glass-btn active">Tentang</a> 
     <a href="#experience" class="nav-glass-btn">Pengalaman</a> 
+    <a href="#education" class="nav-glass-btn">Pendidikan</a> 
     <a href="#skills" class="nav-glass-btn">Skill</a> 
     <a href="#portfolio" class="nav-glass-btn">Dokumen</a> 
     <a href="#contact" class="nav-glass-btn">Kontak</a>
@@ -298,6 +305,7 @@ nav {
   <div class="flex flex-col gap-2">
     <a href="#about" class="drawer-nav-item">Tentang</a> 
     <a href="#experience" class="drawer-nav-item">Pengalaman</a> 
+    <a href="#education" class="drawer-nav-item">Pendidikan</a> 
     <a href="#skills" class="drawer-nav-item">Skill</a> 
     <a href="#portfolio" class="drawer-nav-item">Dokumen</a> 
     <a href="#contact" class="drawer-nav-item">Kontak</a>
@@ -412,6 +420,51 @@ nav {
   </div>
 </section>
 
+<section id="education" class="py-24 max-w-6xl mx-auto px-6">
+  <div class="mb-16 reveal text-center">
+    <h2 class="text-3xl md:text-4xl font-bold text-white mb-2">Riwayat <span class="text-accent">Akademik.</span></h2>
+    <p class="text-zinc-400">Pendidikan terakhir dan pengabdian masyarakat.</p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+
+    <div class="card p-8 reveal delay-100 group border-t-4 border-t-blue-500 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] flex flex-col">
+      <div class="w-14 h-14 rounded-2xl bg-blue-500/10 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-blue-500/20 transition duration-300">
+        <svg class="w-7 h-7 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 14l9-5-9-5-9 5 9 5z"></path><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"></path></svg>
+      </div>
+      <div class="inline-block px-3 py-1 bg-zinc-800 rounded text-xs font-semibold text-zinc-300 mb-4 w-fit border border-zinc-700">2021 - 2026</div>
+      <h3 class="text-xl font-bold text-white mb-2">S1 Teknik Informatika</h3>
+      <h4 class="text-md text-blue-400 font-medium mb-4">Universitas Pamulang</h4>
+      <p class="text-zinc-400 text-sm leading-relaxed mt-auto">
+        Fokus pada pengembangan sistem, pemecahan masalah komputasi, dan fondasi teknologi informasi yang kuat untuk mendukung operasional kerja.
+      </p>
+      
+      <button onclick="openSeminarModal()" class="mt-5 px-4 py-2.5 bg-blue-500/10 hover:bg-blue-500/20 text-blue-300 text-sm font-medium rounded-xl border border-blue-500/20 transition-all hover:-translate-y-0.5 flex items-center gap-2 w-fit">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+        Lihat Sertifikat Seminar
+      </button>
+    </div>
+
+    <div class="card p-8 reveal delay-200 group border-t-4 border-t-purple-500 hover:shadow-[0_0_30px_rgba(168,85,247,0.15)] flex flex-col">
+      <div class="w-14 h-14 rounded-2xl bg-purple-500/10 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-purple-500/20 transition duration-300">
+        <svg class="w-7 h-7 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+      </div>
+      <div class="inline-block px-3 py-1 bg-zinc-800 rounded text-xs font-semibold text-zinc-300 mb-4 w-fit border border-zinc-700">Januari 2024</div>
+      <h3 class="text-xl font-bold text-white mb-2">Pengabdian Masyarakat</h3>
+      <h4 class="text-md text-purple-400 font-medium mb-4">SMAN 8 Kota Tangerang Selatan</h4>
+      <p class="text-zinc-400 text-sm leading-relaxed mt-auto">
+        Tumbuhkan Kreativitas Digital Siswa/I dengan membangun Website Portofolio Interaktif di SMAN 8 Kota Tangerang Selatan.
+      </p>
+
+      <button onclick="openPkmModal()" class="mt-5 px-4 py-2.5 bg-purple-500/10 hover:bg-purple-500/20 text-purple-300 text-sm font-medium rounded-xl border border-purple-500/20 transition-all hover:-translate-y-0.5 flex items-center gap-2 w-fit">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+        Lihat Sertifikat PKM
+      </button>
+    </div>
+
+  </div>
+</section>
+
 <section id="skills" class="py-24 max-w-6xl mx-auto px-6">
   <div class="mb-16 reveal text-center">
     <h2 class="text-3xl md:text-4xl font-bold text-white mb-2">Kompetensi & <span class="text-accent">Keahlian.</span></h2>
@@ -519,7 +572,7 @@ nav {
   <div class="horizontal-scroll-container" id="scrollContainer">
     <div class="horizontal-scroll-wrapper">
       
-      <div class="scroll-card card p-3 reveal delay-100" onclick="openModal(this)" data-title="SIO TKPK 1" data-img="sio.jpg">
+      <div class="scroll-card card p-3 reveal delay-100" onclick="openModal(this, 'portfolio')" data-title="SIO TKPK 1" data-img="sio.jpg">
         <div class="overflow-hidden rounded-xl bg-zinc-800 relative pointer-events-none">
           <img src="sio.jpg" class="w-full h-[280px] object-cover opacity-80 group-hover:opacity-100 transition duration-700" alt="SIO Gondola" onerror="this.src='https://placehold.co/600x400/27272a/ffffff?text=SIO+TKPK+1'" />
         </div>
@@ -529,7 +582,7 @@ nav {
         </div>
       </div>
 
-      <div class="scroll-card card p-3 reveal delay-200" onclick="openModal(this)" data-title="Sertifikat Pelatihan TKPK 1" data-img="sertifikat.jpg">
+      <div class="scroll-card card p-3 reveal delay-200" onclick="openModal(this, 'portfolio')" data-title="Sertifikat Pelatihan TKPK 1" data-img="sertifikat.jpg">
         <div class="overflow-hidden rounded-xl bg-zinc-800 relative pointer-events-none">
           <img src="sertifikat.jpg" class="w-full h-[280px] object-cover opacity-80 transition duration-700" alt="Sertifikat Pelatihan" onerror="this.src='https://placehold.co/600x400/27272a/ffffff?text=Sertifikat+Training'" />
         </div>
@@ -539,7 +592,17 @@ nav {
         </div>
       </div>
 
-      <div class="scroll-card card p-3 reveal delay-300" onclick="openModal(this)" data-title="Sertifikat TOEFL" data-img="SERTIFIKAT_TOEFL.jpg">
+      <div class="scroll-card card p-3 reveal delay-300" onclick="openModal(this, 'portfolio')" data-title="Sertifikat BNSP Garuda" data-img="sertifikat_bnsp.jpg">
+        <div class="overflow-hidden rounded-xl bg-zinc-800 relative pointer-events-none">
+          <img src="sertifikat_bnsp.jpg" class="w-full h-[280px] object-cover opacity-80 transition duration-700" alt="Sertifikat BNSP Garuda" onerror="this.src='https://placehold.co/600x400/27272a/ffffff?text=Sertifikat+BNSP'" />
+        </div>
+        <div class="p-4 mt-2">
+          <h3 class="font-bold text-xl text-white group-hover:text-blue-400 transition">Sertifikat BNSP Garuda</h3>
+          <p class="text-sm text-zinc-400 mt-1">Sertifikat hasil kompetensi BNSP Garuda jurusan Pemrograman</p>
+        </div>
+      </div>
+        
+      <div class="scroll-card card p-3 reveal delay-300" onclick="openModal(this, 'portfolio')" data-title="Sertifikat TOEFL" data-img="SERTIFIKAT_TOEFL.jpg">
         <div class="overflow-hidden rounded-xl bg-zinc-800 relative pointer-events-none">
           <img src="SERTIFIKAT_TOEFL.jpg" class="w-full h-[280px] object-cover opacity-80 transition duration-700" alt="Sertifikat Toefl" onerror="this.src='https://placehold.co/600x400/27272a/ffffff?text=Sertifikat+TOEFL'" />
         </div>
@@ -597,29 +660,51 @@ nav {
   </a>
 </p>
 
-<div id="cvModal" class="hidden fixed inset-0 bg-[#09090b]/95 backdrop-blur-md flex items-center justify-center z-[100] p-4 md:p-8">
-  <div id="cvBox" class="bg-[#18181b] w-full max-w-4xl h-full md:h-[90vh] rounded-3xl overflow-hidden relative p-4 md:p-6 flex flex-col border border-white/10 shadow-[0_0_50px_rgba(59,130,246,0.15)]">
-    <div class="flex-1 min-h-0 overflow-hidden relative modal-img-container border border-white/5 rounded-2xl" id="cvScroll">
+<div id="cvModal" class="hidden fixed inset-0 bg-[#09090b]/95 backdrop-blur-md flex items-center justify-center z-[100] p-4 md:p-8 opacity-0 transition-opacity duration-300">
+  <div id="cvBox" class="bg-[#18181b] w-full max-w-4xl h-full md:h-[90vh] rounded-3xl overflow-hidden relative flex flex-col border border-white/10 shadow-[0_0_50px_rgba(59,130,246,0.15)] transform scale-95 transition-transform duration-300">
+    
+    <div class="p-6 md:px-8 border-b border-white/5 flex justify-between items-center shrink-0 bg-[#18181b] z-10">
+      <div>
+        <h3 class="text-xl md:text-2xl font-bold text-white">Curriculum Vitae</h3>
+        <p class="text-sm text-zinc-400 mt-1">Preview dokumen</p>
+      </div>
+      <button onclick="closeCVPreview()" class="w-10 h-10 flex items-center justify-center rounded-full bg-[#27272a] hover:bg-[#3f3f46] border border-white/5 text-zinc-400 hover:text-white transition-all hover:rotate-90">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+    </div>
+
+    <div class="flex-1 min-h-0 overflow-hidden relative modal-img-container bg-[#09090b]" id="cvScroll">
       <img id="cvImg" src="CV github_page-0001.jpg" class="max-h-full max-w-full object-contain transition-transform" style="transform-origin: center;" alt="CV Preview" onerror="this.src='https://placehold.co/800x1000/27272a/ffffff?text=CV+Preview'" /> 
       <button id="cvFloatingReset" class="floating-reset-btn">↺ Reset</button>
     </div>
-    <div class="shrink-0 flex flex-col sm:flex-row justify-between items-center mt-6 gap-4">
+
+    <div class="p-4 md:p-6 border-t border-white/5 shrink-0 flex flex-col sm:flex-row justify-between items-center bg-[#18181b] gap-4">
       <div class="flex gap-2 bg-[#27272a] p-1.5 rounded-full border border-white/5">
         <button onclick="zoomOut()" class="hover:bg-[#3f3f46] text-white w-10 h-10 rounded-full font-bold transition-colors flex items-center justify-center modal-zoom-btn">-</button>
         <button onclick="zoomIn()" class="hover:bg-[#3f3f46] text-white w-10 h-10 rounded-full font-bold transition-colors flex items-center justify-center modal-zoom-btn">+</button>
       </div>
       <div class="flex w-full sm:w-auto gap-3">
-        <a href="CV Muhammad Rahmadani.pdf" download="" class="flex-1 sm:flex-none text-center bg-blue-600 hover:bg-blue-500 text-white font-bold px-6 py-3 rounded-full transition-colors shadow-[0_0_15px_rgba(37,99,235,0.4)]">Download PDF</a>
-        <button onclick="closeCVPreview()" class="flex-1 sm:flex-none bg-[#27272a] hover:bg-[#3f3f46] border border-white/10 text-white font-bold px-6 py-3 rounded-full transition-colors">Tutup</button>
+        <a href="CV Muhammad Rahmadani.pdf" download="" class="flex-1 sm:flex-none text-center bg-blue-600 hover:bg-blue-500 text-white font-bold px-8 py-3 rounded-full transition-colors shadow-[0_0_15px_rgba(37,99,235,0.4)]">Download PDF</a>
       </div>
     </div>
+
   </div>
 </div>
 
-<div id="modal" class="hidden fixed inset-0 bg-[#09090b]/95 backdrop-blur-md flex items-center justify-center z-[100] p-4 md:p-8">
-  <div class="bg-[#18181b] w-full max-w-4xl h-full md:h-[90vh] rounded-3xl overflow-hidden relative p-4 md:p-6 flex flex-col border border-white/10 shadow-[0_0_50px_rgba(59,130,246,0.15)]">
-    <h3 id="modalTitle" class="shrink-0 text-xl md:text-2xl font-bold mb-4 text-center text-white tracking-wide"></h3>
-    <div id="modalScroll" class="flex-1 min-h-0 overflow-hidden relative modal-img-container border border-white/5 rounded-2xl group">
+<div id="modal" class="hidden fixed inset-0 bg-[#09090b]/95 backdrop-blur-md flex items-center justify-center z-[100] p-4 md:p-8 opacity-0 transition-opacity duration-300">
+  <div id="docBox" class="bg-[#18181b] w-full max-w-4xl h-full md:h-[90vh] rounded-3xl overflow-hidden relative flex flex-col border border-white/10 shadow-[0_0_50px_rgba(59,130,246,0.15)] transform scale-95 transition-transform duration-300">
+    
+    <div class="p-6 md:px-8 border-b border-white/5 flex justify-between items-center shrink-0 bg-[#18181b] z-10">
+      <div>
+        <h3 id="modalTitle" class="text-xl md:text-2xl font-bold text-white"></h3>
+        <p id="modalSubtitle" class="text-sm text-zinc-400 mt-1"></p> 
+      </div>
+      <button onclick="closeModal()" class="w-10 h-10 flex items-center justify-center rounded-full bg-[#27272a] hover:bg-[#3f3f46] border border-white/5 text-zinc-400 hover:text-white transition-all hover:rotate-90">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+    </div>
+
+    <div id="modalScroll" class="flex-1 min-h-0 overflow-hidden relative modal-img-container bg-[#09090b] group">
       <img id="modalImg" class="max-h-full max-w-full object-contain transition-transform" style="transform-origin: center;" alt="Dokumen" />
       <button id="modalFloatingReset" class="floating-reset-btn">↺ Reset</button>
       <button id="modalNavLeft" class="modal-nav-btn left">
@@ -629,27 +714,191 @@ nav {
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
       </button>
     </div>
-    <div class="shrink-0 flex flex-col sm:flex-row justify-between items-center mt-6 gap-4">
+
+    <div class="p-4 md:p-6 border-t border-white/5 shrink-0 flex flex-col sm:flex-row justify-center items-center bg-[#18181b] gap-4">
       <div class="flex gap-2 bg-[#27272a] p-1.5 rounded-full border border-white/5">
         <button onclick="modalZoomOut()" class="hover:bg-[#3f3f46] text-white w-10 h-10 rounded-full font-bold transition-colors flex items-center justify-center modal-zoom-btn">-</button>
         <button onclick="modalZoomIn()" class="hover:bg-[#3f3f46] text-white w-10 h-10 rounded-full font-bold transition-colors flex items-center justify-center modal-zoom-btn">+</button>
       </div>
-      <button onclick="closeModal()" class="w-full sm:w-auto bg-[#27272a] hover:bg-[#3f3f46] border border-white/10 text-white font-bold px-8 py-3 rounded-full transition-colors">Tutup</button>
+    </div>
+
+  </div>
+</div>
+
+        <div id="seminarModalContainer" class="hidden fixed inset-0 bg-[#09090b]/95 backdrop-blur-md flex items-center justify-center z-[110] p-4 md:p-8 opacity-0 transition-opacity duration-300">
+          <div class="bg-[#18181b] w-full max-w-5xl max-h-[85vh] rounded-3xl overflow-hidden relative flex flex-col border border-white/10 shadow-[0_0_50px_rgba(59,130,246,0.15)] transform scale-95 transition-transform duration-300" id="seminarModalBox">
+            <div class="p-6 md:px-8 border-b border-white/5 flex justify-between items-center shrink-0 bg-[#18181b] z-10">
+              <div>
+                <h3 class="text-xl md:text-2xl font-bold text-white">Sertifikat Seminar</h3>
+                <p class="text-sm text-zinc-400 mt-1">Keaktifan akademik & pengembangan diri selama perkuliahan</p>
+              </div>
+              <button onclick="closeSeminarModal()" class="w-10 h-10 flex items-center justify-center rounded-full bg-[#27272a] hover:bg-[#3f3f46] border border-white/5 text-zinc-400 hover:text-white transition-all hover:rotate-90">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+              </button>
+            </div>
+
+            <div class="p-6 md:p-8 overflow-y-auto flex-1 custom-scrollbar">
+              <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+
+                <div class="seminar-card bg-zinc-800/30 border border-white/5 rounded-2xl overflow-hidden group hover:border-blue-500/30 transition-colors cursor-pointer" onclick="openModal(this, 'seminar')" data-title="Artificial Intelligence as Smart Solution for Indonesia's Future">
+          <div class="h-40 overflow-hidden bg-zinc-900">
+            <img src="seminar6.jpg" alt="Seminar" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-110 transition duration-500" onerror="this.src='https://placehold.co/400x300/27272a/ffffff?text=Sertifikat+Seminar+6'">
+          </div>
+          <div class="p-4">
+            <h4 class="text-white font-semibold text-sm mb-1 group-hover:text-blue-400 transition line-clamp-2">Artificial Intelligence as Smart Solution for Indonesia's Future</h4>
+            <p class="text-xs text-zinc-500">05 Desember 2025</p>
+          </div>
+        </div>
+
+        <div class="seminar-card bg-zinc-800/30 border border-white/5 rounded-2xl overflow-hidden group hover:border-blue-500/30 transition-colors cursor-pointer" onclick="openModal(this, 'seminar')" data-title="Peran Artificial Intelligence dan Computer Vision dalam Membangun Ekosistem Digital">
+          <div class="h-40 overflow-hidden bg-zinc-900">
+            <img src="seminar5.jpg" alt="Seminar" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-110 transition duration-500" onerror="this.src='https://placehold.co/400x300/27272a/ffffff?text=Sertifikat+Seminar+5'">
+          </div>
+          <div class="p-4">
+            <h4 class="text-white font-semibold text-sm mb-1 group-hover:text-blue-400 transition line-clamp-2">Peran Artificial Intelligence dan Computer Vision dalam Membangun Ekosistem Digital</h4>
+            <p class="text-xs text-zinc-500">07 Juli 2025</p>
+          </div>
+        </div>
+
+        <div class="seminar-card bg-zinc-800/30 border border-white/5 rounded-2xl overflow-hidden group hover:border-blue-500/30 transition-colors cursor-pointer" onclick="openModal(this, 'seminar')" data-title="Artificial intelligence dan Blockchain: Pilar Utama Personal Branding Mahasiswa Modern">
+          <div class="h-40 overflow-hidden bg-zinc-900">
+            <img src="seminar2.jpg" alt="Seminar" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-110 transition duration-500" onerror="this.src='https://placehold.co/400x300/27272a/ffffff?text=Sertifikat+Seminar+2'">
+          </div>
+          <div class="p-4">
+            <h4 class="text-white font-semibold text-sm mb-1 group-hover:text-blue-400 transition line-clamp-2">Artificial intelligence dan Blockchain: Pilar Utama Personal Branding Mahasiswa Modern</h4>
+            <p class="text-xs text-zinc-500">12 Juni 2025</p>
+          </div>
+        </div>
+
+        <div class="seminar-card bg-zinc-800/30 border border-white/5 rounded-2xl overflow-hidden group hover:border-blue-500/30 transition-colors cursor-pointer" onclick="openModal(this, 'seminar')" data-title="Membangun Fondasi Masa Depan: Kuliah Efektif, Pendidikan Tinggi, dan Meraih Sukses di Dunia Teknologi">
+          <div class="h-40 overflow-hidden bg-zinc-900">
+            <img src="seminar3.jpg" alt="Seminar" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-110 transition duration-500" onerror="this.src='https://placehold.co/400x300/27272a/ffffff?text=Sertifikat+Seminar+3'">
+          </div>
+          <div class="p-4">
+            <h4 class="text-white font-semibold text-sm mb-1 group-hover:text-blue-400 transition line-clamp-2">Membangun Fondasi Masa Depan: Kuliah Efektif, Pendidikan Tinggi, dan Meraih Sukses di Dunia Teknologi</h4>
+            <p class="text-xs text-zinc-500">24 Oktober 2024</p>
+          </div>
+        </div>
+
+        <div class="seminar-card bg-zinc-800/30 border border-white/5 rounded-2xl overflow-hidden group hover:border-blue-500/30 transition-colors cursor-pointer" onclick="openModal(this, 'seminar')" data-title="Kreativitas Tanpa Batas sebagai Strategi Ampuh Nge-Hitz di Era Digital">
+          <div class="h-40 overflow-hidden bg-zinc-900">
+            <img src="seminar_7.jpg" alt="Seminar" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-110 transition duration-500" onerror="this.src='https://placehold.co/400x300/27272a/ffffff?text=Sertifikat+Seminar+7'">
+          </div>
+          <div class="p-4">
+            <h4 class="text-white font-semibold text-sm mb-1 group-hover:text-blue-400 transition line-clamp-2">Kreativitas Tanpa Batas sebagai Strategi Ampuh Nge-Hitz di Era Digital</h4>
+            <p class="text-xs text-zinc-500">06 Juni 2024</p>
+          </div>
+        </div>
+
+        <div class="seminar-card bg-zinc-800/30 border border-white/5 rounded-2xl overflow-hidden group hover:border-blue-500/30 transition-colors cursor-pointer" onclick="openModal(this, 'seminar')" data-title="Persuasive Technology and Gamification To Sustain Positive Change">
+          <div class="h-40 overflow-hidden bg-zinc-900">
+            <img src="seminar4.jpg" alt="Seminar" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-110 transition duration-500" onerror="this.src='https://placehold.co/400x300/27272a/ffffff?text=Sertifikat+Seminar+4'">
+          </div>
+          <div class="p-4">
+            <h4 class="text-white font-semibold text-sm mb-1 group-hover:text-blue-400 transition line-clamp-2">Persuasive Technology and Gamification To Sustain Positive Change</h4>
+            <p class="text-xs text-zinc-500">07 Desember 2023</p>
+          </div>
+        </div>
+
+        <div class="seminar-card bg-zinc-800/30 border border-white/5 rounded-2xl overflow-hidden group hover:border-blue-500/30 transition-colors cursor-pointer" onclick="openModal(this, 'seminar')" data-title="The Power of Artificial Intelligence Systems for Brings Indonesia to the Industry 5.0">
+          <div class="h-40 overflow-hidden bg-zinc-900">
+            <img src="seminar1.jpg" alt="Seminar" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-110 transition duration-500" onerror="this.src='https://placehold.co/400x300/27272a/ffffff?text=Sertifikat+Seminar+1'">
+          </div>
+          <div class="p-4">
+            <h4 class="text-white font-semibold text-sm mb-1 group-hover:text-blue-400 transition line-clamp-2">The Power of Artificial Intelligence Systems for Brings Indonesia to the Industry 5.0</h4>
+            <p class="text-xs text-zinc-500">16 Maret 2023</p>
+          </div>
+        </div>
+
+      </div>
     </div>
   </div>
 </div>
 
-<script>
-const docItems = Array.from(document.querySelectorAll('.scroll-card')).map(card => ({
-  title: card.getAttribute('data-title') || 'Dokumen',
-  imgSrc: card.querySelector('img')?.src || ''
-}));
+<div id="pkmModalContainer" class="hidden fixed inset-0 bg-[#09090b]/95 backdrop-blur-md flex items-center justify-center z-[110] p-4 md:p-8 opacity-0 transition-opacity duration-300">
+  <div class="bg-[#18181b] w-full max-w-4xl h-full md:h-[90vh] rounded-3xl overflow-hidden relative flex flex-col border border-white/10 shadow-[0_0_50px_rgba(168,85,247,0.15)] transform scale-95 transition-transform duration-300" id="pkmModalBox">
+    
+    <div class="p-6 md:px-8 border-b border-white/5 flex justify-between items-center shrink-0 bg-[#18181b] z-10">
+      <div>
+        <h3 class="text-xl md:text-2xl font-bold text-white">Sertifikat Pengabdian Masyarakat</h3>
+        <p class="text-sm text-zinc-400 mt-1">SMAN 8 Kota Tangerang Selatan</p>
+      </div>
+      <button onclick="closePkmModal()" class="w-10 h-10 flex items-center justify-center rounded-full bg-[#27272a] hover:bg-[#3f3f46] border border-white/5 text-zinc-400 hover:text-white transition-all hover:rotate-90">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+    </div>
 
+    <div class="flex-1 min-h-0 overflow-hidden relative modal-img-container bg-[#09090b]" id="pkmScroll">
+      <img id="pkmImg" src="sertifikat_pkm.jpg" class="max-h-full max-w-full object-contain transition-transform" style="transform-origin: center;" alt="Sertifikat PKM" onerror="this.src='https://placehold.co/800x1000/27272a/ffffff?text=Sertifikat+PKM'" /> 
+      <button id="pkmFloatingReset" class="floating-reset-btn">↺ Reset</button>
+    </div>
+
+    <div class="p-4 md:p-6 border-t border-white/5 shrink-0 flex flex-col sm:flex-row justify-center items-center bg-[#18181b] gap-4">
+      <div class="flex gap-2 bg-[#27272a] p-1.5 rounded-full border border-white/5">
+        <button onclick="zoomOutPkm()" class="hover:bg-[#3f3f46] text-white w-10 h-10 rounded-full font-bold transition-colors flex items-center justify-center modal-zoom-btn">-</button>
+        <button onclick="zoomInPkm()" class="hover:bg-[#3f3f46] text-white w-10 h-10 rounded-full font-bold transition-colors flex items-center justify-center modal-zoom-btn">+</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+// --- VARIABEL GLOBAL UNTUK GALERI ---
+let portfolioItems = [];
+let seminarItems = [];
+let currentGallery = [];
 let currentDocIndex = 0;
 
+// --- VARIABEL STATE UNTUK ZOOM & DRAG ---
+let cvScaleObj = { value: 1 }, cvPosXObj = { value: 0 }, cvPosYObj = { value: 0 };
+let cvDragging = false, cvStartX = 0, cvStartY = 0;
+
+let modalScaleObj = { value: 1 }, modalXObj = { value: 0 }, modalYObj = { value: 0 };
+let modalDragging = false, modalStartX = 0, modalStartY = 0;
+
+let pkmScaleObj = { value: 1 }, pkmPosXObj = { value: 0 }, pkmPosYObj = { value: 0 };
+let pkmDragging = false, pkmStartX = 0, pkmStartY = 0;
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Ambil data gambar dari HTML untuk portfolio
+  portfolioItems = Array.from(document.querySelectorAll('.scroll-card')).map(card => ({
+    title: card.getAttribute('data-title') || 'Dokumen',
+    imgSrc: card.querySelector('img')?.src || ''
+  }));
+
+  // Ambil data gambar dari HTML untuk seminar
+  seminarItems = Array.from(document.querySelectorAll('.seminar-card')).map(card => ({
+    title: card.getAttribute('data-title') || 'Sertifikat Seminar',
+    imgSrc: card.querySelector('img')?.src || ''
+  }));
+
+  // Setup interaksi Zoom & Drag
+  initDrag('cvScroll', cvScaleObj, cvPosXObj, cvPosYObj, updateCVTransform, 'cvFloatingReset');
+  initPinchZoom('cvScroll', cvScaleObj, cvPosXObj, cvPosYObj, updateCVTransform);
+
+  initDrag('modalScroll', modalScaleObj, modalXObj, modalYObj, updateModalTransform, 'modalFloatingReset', true);
+  initPinchZoom('modalScroll', modalScaleObj, modalXObj, modalYObj, updateModalTransform);
+
+  initDrag('pkmScroll', pkmScaleObj, pkmPosXObj, pkmPosYObj, updatePkmTransform, 'pkmFloatingReset');
+  initPinchZoom('pkmScroll', pkmScaleObj, pkmPosXObj, pkmPosYObj, updatePkmTransform);
+
+  // Jalankan animasi hero saat web pertama dibuka
+  gsap.from("#navbar", { y: -50, opacity: 0, duration: 1, ease: "power3.out" });
+  gsap.from("#hero img", { scale: 0.5, opacity: 0, duration: 1.2, ease: "elastic.out(1, 0.5)", delay: 0.2 });
+  gsap.from("#hero .bg-blue-900\\/30", { y: 20, opacity: 0, duration: 0.8, ease: "power3.out", delay: 0.4 });
+  gsap.from("#hero h1", { y: 20, opacity: 0, duration: 0.8, ease: "power3.out", delay: 0.5 });
+  gsap.from("#hero p", { y: 20, opacity: 0, duration: 0.8, ease: "power3.out", delay: 0.6 });
+  gsap.from("#cvButtonContainer", { scale: 0.5, y: 30, opacity: 0, duration: 1, ease: "elastic.out(1, 0.7)", delay: 0.8 });
+  gsap.from(".particle", { scale: 0, opacity: 0, duration: 2, stagger: 0.2, delay: 1 });
+  
+  checkReveal(); updateNavButtonsVisibility();
+});
+
+// --- FUNGSI UPDATE GAMBAR DI MODAL UTAMA ---
 function updateModalContent(index) {
-  if (!docItems.length || index < 0 || index >= docItems.length) return;
-  const item = docItems[index];
+  if (!currentGallery.length || index < 0 || index >= currentGallery.length) return;
+  const item = currentGallery[index];
   const modalImg = document.getElementById('modalImg');
   const modalTitle = document.getElementById('modalTitle');
   if (modalImg) modalImg.src = item.imgSrc;
@@ -659,10 +908,11 @@ function updateModalContent(index) {
 
 function resetModalTransform() {
   modalScaleObj.value = 1; modalXObj.value = 0; modalYObj.value = 0;
-  updateModalTransform(); updateNavButtonsVisibility();
+  updateModalTransform(); 
+  updateNavButtonsVisibility();
 }
 
-function nextDoc() { if (currentDocIndex + 1 < docItems.length) { currentDocIndex++; updateModalContent(currentDocIndex); } }
+function nextDoc() { if (currentDocIndex + 1 < currentGallery.length) { currentDocIndex++; updateModalContent(currentDocIndex); } }
 function prevDoc() { if (currentDocIndex - 1 >= 0) { currentDocIndex--; updateModalContent(currentDocIndex); } }
 
 function updateNavButtonsVisibility() {
@@ -670,23 +920,20 @@ function updateNavButtonsVisibility() {
   const rightBtn = document.getElementById('modalNavRight');
   if (!leftBtn || !rightBtn) return;
   const isZoomedOrMoved = (modalScaleObj.value > 1.01 || modalScaleObj.value < 0.99) || (Math.abs(modalXObj.value) > 5) || (Math.abs(modalYObj.value) > 5);
-  const hasMultiple = docItems.length > 1;
+  const hasMultiple = currentGallery.length > 1;
+  
   if (!isZoomedOrMoved && hasMultiple) {
     leftBtn.classList.add('visible'); rightBtn.classList.add('visible');
     leftBtn.style.opacity = currentDocIndex === 0 ? '0.2' : '1';
-    rightBtn.style.opacity = currentDocIndex === docItems.length-1 ? '0.2' : '1';
+    rightBtn.style.opacity = currentDocIndex === currentGallery.length-1 ? '0.2' : '1';
     leftBtn.style.pointerEvents = currentDocIndex === 0 ? 'none' : 'auto';
-    rightBtn.style.pointerEvents = currentDocIndex === docItems.length-1 ? 'none' : 'auto';
+    rightBtn.style.pointerEvents = currentDocIndex === currentGallery.length-1 ? 'none' : 'auto';
   } else {
     leftBtn.classList.remove('visible'); rightBtn.classList.remove('visible');
   }
 }
 
-let cvScaleObj = { value: 1 }, cvPosXObj = { value: 0 }, cvPosYObj = { value: 0 };
-let cvDragging = false, cvStartX = 0, cvStartY = 0;
-let modalScaleObj = { value: 1 }, modalXObj = { value: 0 }, modalYObj = { value: 0 };
-let modalDragging = false, modalStartX = 0, modalStartY = 0;
-
+// --- FUNGSI UPDATE CSS TRANSFORM ---
 function updateCVTransform() { 
   const img = document.getElementById('cvImg'); 
   if (img) img.style.transform = `translate(${cvPosXObj.value}px, ${cvPosYObj.value}px) scale(${cvScaleObj.value})`;
@@ -708,60 +955,48 @@ function updateModalTransform() {
   updateNavButtonsVisibility();
 }
 
-function initCVDrag() {
-  const container = document.getElementById('cvScroll');
+function updatePkmTransform() { 
+  const img = document.getElementById('pkmImg'); 
+  if (img) img.style.transform = `translate(${pkmPosXObj.value}px, ${pkmPosYObj.value}px) scale(${pkmScaleObj.value})`;
+  const resetBtn = document.getElementById('pkmFloatingReset');
+  if (resetBtn) {
+    const isZoomed = (pkmScaleObj.value > 1.01 || pkmScaleObj.value < 0.99) || (Math.abs(pkmPosXObj.value) > 5) || (Math.abs(pkmPosYObj.value) > 5);
+    resetBtn.style.display = isZoomed ? "flex" : "none";
+  }
+}
+
+// --- LOGIKA DRAG & ZOOM (REUSABLE) ---
+function initDrag(elementId, scaleObj, xObj, yObj, updateFn, resetBtnId, isGallery = false) {
+  const container = document.getElementById(elementId);
   if (!container) return;
-  const startDrag = (clientX, clientY) => { cvDragging = true; cvStartX = clientX - cvPosXObj.value; cvStartY = clientY - cvPosYObj.value; };
-  container.addEventListener('mousedown', (e) => { if (e.target.closest('.floating-reset-btn') || e.target.closest('button')) return; e.preventDefault(); startDrag(e.clientX, e.clientY); container.classList.add('cursor-grabbing'); });
-  window.addEventListener('mouseup', () => { cvDragging = false; container.classList.remove('cursor-grabbing'); });
-  window.addEventListener('mousemove', (e) => { if (!cvDragging) return; cvPosXObj.value = e.clientX - cvStartX; cvPosYObj.value = e.clientY - cvStartY; updateCVTransform(); });
-  container.addEventListener('touchstart', (e) => { if (e.target.closest('.floating-reset-btn') || e.target.closest('button')) return; if (e.touches.length === 1) { e.preventDefault(); startDrag(e.touches[0].clientX, e.touches[0].clientY); } });
-  window.addEventListener('touchmove', (e) => { if (cvDragging && e.touches.length === 1) { cvPosXObj.value = e.touches[0].clientX - cvStartX; cvPosYObj.value = e.touches[0].clientY - cvStartY; updateCVTransform(); e.preventDefault(); } }, {passive: false});
-  window.addEventListener('touchend', () => { cvDragging = false; });
-  container.addEventListener('wheel', (e) => { e.preventDefault(); cvScaleObj.value = Math.min(Math.max(cvScaleObj.value + (e.deltaY < 0 ? 0.1 : -0.1), 0.5), 4); updateCVTransform(); }, {passive: false});
+  let isDragging = false; let startX = 0; let startY = 0;
+
+  const startDrag = (clientX, clientY) => { isDragging = true; startX = clientX - xObj.value; startY = clientY - yObj.value; };
+  
+  container.addEventListener('mousedown', (e) => { 
+    if (e.target.closest('.floating-reset-btn') || e.target.closest('button') || e.target.closest('.modal-nav-btn')) return; 
+    e.preventDefault(); startDrag(e.clientX, e.clientY); container.classList.add('cursor-grabbing'); 
+  });
+  window.addEventListener('mouseup', () => { isDragging = false; container.classList.remove('cursor-grabbing'); });
+  window.addEventListener('mousemove', (e) => { if (!isDragging) return; xObj.value = e.clientX - startX; yObj.value = e.clientY - startY; updateFn(); });
+  
+  container.addEventListener('touchstart', (e) => { 
+    if (e.target.closest('.floating-reset-btn') || e.target.closest('button') || e.target.closest('.modal-nav-btn')) return; 
+    if (e.touches.length === 1) { startDrag(e.touches[0].clientX, e.touches[0].clientY); } 
+  }, {passive: false});
+  
+  window.addEventListener('touchmove', (e) => { 
+    if (isDragging && e.touches.length === 1) { 
+      xObj.value = e.touches[0].clientX - startX; yObj.value = e.touches[0].clientY - startY; 
+      updateFn(); 
+    } 
+  }, {passive: false});
+  window.addEventListener('touchend', () => { isDragging = false; });
+  
+  container.addEventListener('wheel', (e) => { 
+    e.preventDefault(); scaleObj.value = Math.min(Math.max(scaleObj.value + (e.deltaY < 0 ? 0.1 : -0.1), 0.5), 4); updateFn(); 
+  }, {passive: false});
 }
-
-function initModalEvents() {
-  const container = document.getElementById('modalScroll');
-  if (!container) return;
-  const startDrag = (clientX, clientY) => { modalDragging = true; modalStartX = clientX - modalXObj.value; modalStartY = clientY - modalYObj.value; };
-  container.addEventListener('mousedown', (e) => { if (e.target.closest('.floating-reset-btn') || e.target.closest('.modal-nav-btn')) return; e.preventDefault(); startDrag(e.clientX, e.clientY); container.classList.add('cursor-grabbing'); });
-  window.addEventListener('mouseup', () => { modalDragging = false; container.classList.remove('cursor-grabbing'); });
-  window.addEventListener('mousemove', (e) => { if (!modalDragging) return; modalXObj.value = e.clientX - modalStartX; modalYObj.value = e.clientY - modalStartY; updateModalTransform(); });
-  container.addEventListener('touchstart', (e) => { if (e.target.closest('.floating-reset-btn') || e.target.closest('.modal-nav-btn')) return; if (e.touches.length === 1) { e.preventDefault(); startDrag(e.touches[0].clientX, e.touches[0].clientY); } });
-  window.addEventListener('touchmove', (e) => { if (modalDragging && e.touches.length === 1) { modalXObj.value = e.touches[0].clientX - modalStartX; modalYObj.value = e.touches[0].clientY - modalStartY; updateModalTransform(); e.preventDefault(); } }, {passive: false});
-  window.addEventListener('touchend', () => { modalDragging = false; });
-  container.addEventListener('wheel', (e) => { e.preventDefault(); modalScaleObj.value = Math.min(Math.max(modalScaleObj.value + (e.deltaY < 0 ? 0.1 : -0.1), 0.5), 4); updateModalTransform(); }, {passive: false});
-}
-
-function modalZoomIn() { modalScaleObj.value = Math.min(modalScaleObj.value + 0.1, 4); updateModalTransform(); }
-function modalZoomOut() { modalScaleObj.value = Math.max(modalScaleObj.value - 0.1, 0.5); updateModalTransform(); }
-function zoomIn() { cvScaleObj.value = Math.min(cvScaleObj.value + 0.1, 4); updateCVTransform(); }
-function zoomOut() { cvScaleObj.value = Math.max(cvScaleObj.value - 0.1, 0.5); updateCVTransform(); }
-function resetZoomCV() { cvScaleObj.value = 1; cvPosXObj.value = 0; cvPosYObj.value = 0; updateCVTransform(); }
-
-function openCVPreview() {
-  document.getElementById('cvModal').classList.remove('hidden');
-  document.body.style.overflow = 'hidden';
-  resetZoomCV();
-  gsap.from("#cvBox", { scale: 0.9, y: 30, opacity: 0, duration: 0.5, ease: "back.out(1.2)" });
-  gsap.from("#cvImg", { scale: 0.8, opacity: 0, duration: 0.6, delay: 0.2, ease: "power3.out" });
-}
-function closeCVPreview() { document.getElementById('cvModal').classList.add('hidden'); document.body.style.overflow = 'auto'; }
-
-window.openModal = function(el) {
-  const clickedImg = el.querySelector('img');
-  const imgSrc = clickedImg ? clickedImg.src : '';
-  const foundIndex = docItems.findIndex(item => item.imgSrc === imgSrc);
-  currentDocIndex = foundIndex !== -1 ? foundIndex : 0;
-  updateModalContent(currentDocIndex);
-  document.getElementById('modal').classList.remove('hidden');
-  document.body.style.overflow = 'hidden';
-  gsap.from("#modal > div", { scale: 0.9, y: 30, opacity: 0, duration: 0.5, ease: "back.out(1.2)" });
-  gsap.from("#modalImg", { scale: 0.8, opacity: 0, duration: 0.6, delay: 0.2, ease: "power3.out" });
-};
-
-function closeModal() { document.getElementById('modal').classList.add('hidden'); document.body.style.overflow = 'auto'; }
 
 function initPinchZoom(elementId, scaleObj, xObj, yObj, updateFn) {
   const container = document.getElementById(elementId);
@@ -769,12 +1004,14 @@ function initPinchZoom(elementId, scaleObj, xObj, yObj, updateFn) {
   let initialDistance = 0, initialScale = 1, initialX = 0, initialY = 0;
   const getDistance = (touches) => Math.hypot(touches[0].clientX - touches[1].clientX, touches[0].clientY - touches[1].clientY);
   const getCenter = (touches) => ({ x: (touches[0].clientX + touches[1].clientX) / 2, y: (touches[0].clientY + touches[1].clientY) / 2 });
+  
   container.addEventListener('touchstart', (e) => {
     if (e.touches.length === 2) {
       e.preventDefault(); initialDistance = getDistance(e.touches); initialScale = scaleObj.value;
       const center = getCenter(e.touches); initialX = center.x; initialY = center.y;
     }
   }, {passive: false});
+  
   container.addEventListener('touchmove', (e) => {
     if (e.touches.length === 2) {
       e.preventDefault(); const newDistance = getDistance(e.touches);
@@ -787,11 +1024,124 @@ function initPinchZoom(elementId, scaleObj, xObj, yObj, updateFn) {
   }, {passive: false});
 }
 
+// --- TOMBOL ZOOM & RESET MANUL ---
+function modalZoomIn() { modalScaleObj.value = Math.min(modalScaleObj.value + 0.1, 4); updateModalTransform(); }
+function modalZoomOut() { modalScaleObj.value = Math.max(modalScaleObj.value - 0.1, 0.5); updateModalTransform(); }
+function zoomIn() { cvScaleObj.value = Math.min(cvScaleObj.value + 0.1, 4); updateCVTransform(); }
+function zoomOut() { cvScaleObj.value = Math.max(cvScaleObj.value - 0.1, 0.5); updateCVTransform(); }
+function zoomInPkm() { pkmScaleObj.value = Math.min(pkmScaleObj.value + 0.1, 4); updatePkmTransform(); }
+function zoomOutPkm() { pkmScaleObj.value = Math.max(pkmScaleObj.value - 0.1, 0.5); updatePkmTransform(); }
+
+function resetZoomCV() { cvScaleObj.value = 1; cvPosXObj.value = 0; cvPosYObj.value = 0; updateCVTransform(); }
+function resetZoomPkm() { pkmScaleObj.value = 1; pkmPosXObj.value = 0; pkmPosYObj.value = 0; updatePkmTransform(); }
+
 document.getElementById('modalNavLeft')?.addEventListener('click', (e) => { e.stopPropagation(); prevDoc(); });
 document.getElementById('modalNavRight')?.addEventListener('click', (e) => { e.stopPropagation(); nextDoc(); });
 document.getElementById('modalFloatingReset')?.addEventListener('click', (e) => { e.stopPropagation(); resetModalTransform(); });
 document.getElementById('cvFloatingReset')?.addEventListener('click', (e) => { e.stopPropagation(); resetZoomCV(); });
+document.getElementById('pkmFloatingReset')?.addEventListener('click', (e) => { e.stopPropagation(); resetZoomPkm(); });
 
+// --- FUNGSI BUKA TUTUP MODAL ---
+function openCVPreview() {
+  const modal = document.getElementById('cvModal');
+  const box = document.getElementById('cvBox');
+  modal.classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+  resetZoomCV();
+  setTimeout(() => { modal.classList.remove('opacity-0'); box.classList.remove('scale-95'); }, 10);
+}
+
+function closeCVPreview() { 
+  const modal = document.getElementById('cvModal');
+  const box = document.getElementById('cvBox');
+  modal.classList.add('opacity-0'); box.classList.add('scale-95');
+  setTimeout(() => { modal.classList.add('hidden'); document.body.style.overflow = 'auto'; }, 300);
+}
+
+// LOGIKA UTAMA MEMBUKA VIEWER GAMBAR DENGAN SUBTITLE DINAMIS
+window.openModal = function(el, type) {
+  const subtitle = document.getElementById('modalSubtitle');
+
+  if (type === 'portfolio') { 
+    currentGallery = portfolioItems; 
+    if(subtitle) subtitle.textContent = "Sertifikasi & Dokumen Profesional";
+  } 
+  else if (type === 'seminar') { 
+    currentGallery = seminarItems; 
+    if(subtitle) subtitle.textContent = "Keaktifan akademik & pengembangan diri selama perkuliahan";
+  } 
+  else { 
+    currentGallery = portfolioItems; 
+    if(subtitle) subtitle.textContent = "Sertifikasi & Dokumen Profesional";
+  }
+
+  const clickedImg = el.querySelector('img');
+  const imgSrc = clickedImg ? clickedImg.src : '';
+  const foundIndex = currentGallery.findIndex(item => item.imgSrc === imgSrc);
+  currentDocIndex = foundIndex !== -1 ? foundIndex : 0;
+  
+  updateModalContent(currentDocIndex);
+  
+  const modal = document.getElementById('modal');
+  const box = document.getElementById('docBox');
+  
+  modal.classList.remove('z-[100]');
+  modal.classList.add('z-[120]');
+  
+  modal.classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+  setTimeout(() => { modal.classList.remove('opacity-0'); box.classList.remove('scale-95'); }, 10);
+};
+
+function closeModal() { 
+  const modal = document.getElementById('modal');
+  const box = document.getElementById('docBox');
+  modal.classList.add('opacity-0'); box.classList.add('scale-95');
+  
+  setTimeout(() => { 
+    modal.classList.add('hidden'); 
+    modal.classList.remove('z-[120]');
+    modal.classList.add('z-[100]');
+    
+    const seminarModal = document.getElementById('seminarModalContainer');
+    if (seminarModal && seminarModal.classList.contains('hidden')) {
+      document.body.style.overflow = 'auto'; 
+    }
+  }, 300);
+}
+
+function openSeminarModal() {
+  const modal = document.getElementById('seminarModalContainer');
+  const box = document.getElementById('seminarModalBox');
+  modal.classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+  setTimeout(() => { modal.classList.remove('opacity-0'); box.classList.remove('scale-95'); }, 10);
+}
+
+function closeSeminarModal() {
+  const modal = document.getElementById('seminarModalContainer');
+  const box = document.getElementById('seminarModalBox');
+  modal.classList.add('opacity-0'); box.classList.add('scale-95');
+  setTimeout(() => { modal.classList.add('hidden'); document.body.style.overflow = 'auto'; }, 300);
+}
+
+function openPkmModal() {
+  const modal = document.getElementById('pkmModalContainer');
+  const box = document.getElementById('pkmModalBox');
+  modal.classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+  resetZoomPkm();
+  setTimeout(() => { modal.classList.remove('opacity-0'); box.classList.remove('scale-95'); }, 10);
+}
+
+function closePkmModal() {
+  const modal = document.getElementById('pkmModalContainer');
+  const box = document.getElementById('pkmModalBox');
+  modal.classList.add('opacity-0'); box.classList.add('scale-95');
+  setTimeout(() => { modal.classList.add('hidden'); document.body.style.overflow = 'auto'; }, 300);
+}
+
+// --- FUNGSI SCROLL MENU & NAVBAR ---
 const navBrand = document.getElementById('navBrand');
 if (navBrand) navBrand.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 const hamburgerBtn = document.getElementById('hamburgerBtn'), drawerOverlay = document.getElementById('drawerOverlay'), drawerMenu = document.getElementById('drawerMenu'), closeDrawerBtn = document.getElementById('closeDrawerBtn'), drawerLinks = document.querySelectorAll('.drawer-nav-item');
@@ -811,10 +1161,12 @@ function setActiveNav() {
 }
 window.addEventListener("scroll", setActiveNav); window.addEventListener("load", setActiveNav);
 
+// --- REVEAL ANIMASI SCROLL ---
 const revealElements = document.querySelectorAll('.reveal');
 function checkReveal() { revealElements.forEach(el => { if (el.getBoundingClientRect().top < window.innerHeight - 80) el.classList.add('revealed'); }); }
 window.addEventListener('scroll', checkReveal); window.addEventListener('load', checkReveal);
 
+// --- DRAG SCROLL PADA DOKUMEN ---
 const scrollContainer = document.getElementById('scrollContainer');
 if(scrollContainer){ 
   let isDown=false,startX,scrollLeft; 
@@ -837,26 +1189,6 @@ function updateFloatingButton() {
   } 
 }
 window.addEventListener("scroll", updateFloatingButton); window.addEventListener("resize", updateFloatingButton); updateFloatingButton();
-
-// Init Animations
-document.addEventListener("DOMContentLoaded", () => {
-  initCVDrag(); initModalEvents();
-  initPinchZoom('cvScroll', cvScaleObj, cvPosXObj, cvPosYObj, updateCVTransform);
-  initPinchZoom('modalScroll', modalScaleObj, modalXObj, modalYObj, updateModalTransform);
-  
-  gsap.from("#navbar", { y: -50, opacity: 0, duration: 1, ease: "power3.out" });
-  gsap.from("#hero img", { scale: 0.5, opacity: 0, duration: 1.2, ease: "elastic.out(1, 0.5)", delay: 0.2 });
-  gsap.from("#hero .bg-blue-900\\/30", { y: 20, opacity: 0, duration: 0.8, ease: "power3.out", delay: 0.4 });
-  gsap.from("#hero h1", { y: 20, opacity: 0, duration: 0.8, ease: "power3.out", delay: 0.5 });
-  gsap.from("#hero p", { y: 20, opacity: 0, duration: 0.8, ease: "power3.out", delay: 0.6 });
-  
-  // Animasi Tombol CV
-  gsap.from("#cvButtonContainer", { scale: 0.5, y: 30, opacity: 0, duration: 1, ease: "elastic.out(1, 0.7)", delay: 0.8 });
-  
-  gsap.from(".particle", { scale: 0, opacity: 0, duration: 2, stagger: 0.2, delay: 1 });
-  
-  checkReveal(); updateNavButtonsVisibility();
-});
 </script>
 </body>
 </html>
